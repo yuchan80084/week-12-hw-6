@@ -1,0 +1,25 @@
+//main.cpp
+for (int i = 0; i < 5; i++) myCars[i]->model();
+//Car.h
+void model();
+//Car.cpp
+void Car::model() {
+	std::cout << " Car\n";
+}
+//SUV.h
+void model();
+//SUV.cpp
+void SUV::model() {
+	std::cout << " SUV\n";
+}
+//Motor.h
+void model();
+//Motor.cpp
+void Motor::model() {
+	std::cout << " Motor\n";
+}
+
+//////
+Virtual 함수가 없는 경우엔 1 2번째의 SUV 3 4번째의Motor class에서 model 함수를 출력해도 
+부모 class인 Car의 model 함수가 출력된다.
+하지만 Car 함수의 breaksound 앞에 Virtual 을 추가한 경우엔 같은 함수명이 있더라도 Car의 model가 아닌 Motor, SUV에서 접근이 가능해져  goekd class의 model 함수가 실행된다.
